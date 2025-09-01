@@ -1,0 +1,13 @@
+.addressValidationPaper {
+  padding: 24px;
+  max-width: 400px;
+  margin: 200px auto;
+}
+
+.icon-success {
+  color: #2e7d32;
+}
+
+.icon-error {
+  color: #d32f2f;
+}

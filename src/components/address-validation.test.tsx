@@ -1,9 +1,9 @@
 import { render} from '@testing-library/react';
-import App from './App';
+import AddressValidation from './address-validation';
 
 test('should render successfully', () => {
   const { baseElement } = render(
-    <App />
+    <AddressValidation />
   );
   expect(baseElement).toBeTruthy();
 });

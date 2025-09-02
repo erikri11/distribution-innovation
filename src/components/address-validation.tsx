@@ -52,11 +52,7 @@ export function AddressValidation() {
 
   // --- Functions --------------------------------------------------------------
 
-  // const clearValidation = () => setStreetNumberObject(undefined);
-
-  const handleCountryChange = (e: SelectChangeEvent<string>) => {
-    setCountry(e.target.value);
-
+  const clearValidation = () => {
     setStreet('');
     setSelectedCity('');
     setStreetNo(null);
@@ -65,6 +61,11 @@ export function AddressValidation() {
     setStreetCollection(null);
     setStreetNumberCollection(null);
     setStreetNumberObject(undefined);
+  };
+
+  const handleCountryChange = (e: SelectChangeEvent<string>) => {
+    setCountry(e.target.value);
+    clearValidation();
   };
 
   const handleStreetChange = (e: ChangeEvent<HTMLInputElement>) => {

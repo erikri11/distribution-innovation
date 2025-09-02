@@ -170,11 +170,16 @@ export function AddressValidation() {
               <MenuItem value={selectedCity} disabled>
                 <em>Please select a city...</em>
               </MenuItem>
-              {streetCollection?.streets?.map((s, index) =>
-                <MenuItem key={index} value={s.city}>
-                  {s.city}
-                </MenuItem>
-              )}
+							{streetCollection?.streets
+								?.filter((street, index, allStreets) =>
+										allStreets.findIndex(otherStreet => otherStreet.city === street.city) === index
+								)
+								.map((street, index) => (
+									<MenuItem key={index} value={street.city}>
+										{street.city}
+									</MenuItem>
+								))
+							}
           </Select>
         </FormControl>
 
